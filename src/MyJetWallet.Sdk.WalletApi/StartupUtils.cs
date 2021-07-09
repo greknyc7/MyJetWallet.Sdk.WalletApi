@@ -126,8 +126,7 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseFileServer();
+            
         }
 
         public static string GetSessionEncodingKey()
