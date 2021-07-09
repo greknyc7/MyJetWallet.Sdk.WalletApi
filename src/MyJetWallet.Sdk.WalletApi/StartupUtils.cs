@@ -77,7 +77,7 @@ namespace MyJetWallet.Sdk.WalletApi
                 .AddAuthorization(o => o.SetupWalletApiPolicy());
         }
 
-        public static void SetupWalletApplication(IApplicationBuilder app, IWebHostEnvironment env, bool enableApiTrace)
+        public static void SetupWalletApplication(IApplicationBuilder app, IWebHostEnvironment env, bool enableApiTrace, string swaggerOffsetName)
         {
             if (env.IsDevelopment())
             {
@@ -117,8 +117,18 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.BindIsAlive(GetEnvVariables());
 
-            app.UseOpenApi();
-            app.UseSwaggerUi3();
+            app.UseOpenApi(settings =>
+            {
+                settings.Path = $"/swagger/{swaggerOffsetName}/swagger.json";
+            });
+
+            app.UseSwaggerUi3(settings =>
+            {
+                settings.EnableTryItOut = false;
+                settings.Path = $"/swagger/{swaggerOffsetName}";
+                settings.DocumentPath = $"/swagger/{swaggerOffsetName}/swagger.json";
+
+            });
             
 
             app.UseMiddleware<ExceptionLogMiddleware>();
