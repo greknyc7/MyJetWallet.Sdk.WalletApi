@@ -124,7 +124,7 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.UseSwaggerUi3(settings =>
             {
-                settings.EnableTryItOut = false;
+                settings.EnableTryItOut = true;
                 settings.Path = $"/swagger/{swaggerOffsetName}";
                 settings.DocumentPath = $"/swagger/{swaggerOffsetName}/swagger.json";
 
