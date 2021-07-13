@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.7" />
-    <PackageReference Include="MyJetWallet.Domain" Version="1.0.30" />
+    <PackageReference Include="MyJetWallet.Domain" Version="1.0.31" />
     <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="1.2.0" />
     <PackageReference Include="NSwag.AspNetCore" Version="13.11.3" />
     <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="1.1.0" />
