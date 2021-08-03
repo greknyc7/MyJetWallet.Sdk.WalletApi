@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.7" />
-    <PackageReference Include="MyJetWallet.Domain" Version="1.0.30" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.8" />
+    <PackageReference Include="MyJetWallet.Domain" Version="1.0.31" />
     <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="1.2.0" />
-    <PackageReference Include="NSwag.AspNetCore" Version="13.11.3" />
-    <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="1.0.27" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.12.1" />
+    <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="1.1.2" />
     <PackageReference Include="MyJetWallet.Sdk.RestApiTrace" Version="1.0.7" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
     <PackageReference Include="SimpleTrading.ServiceStatusReporterConnector" Version="1.0.9" />
