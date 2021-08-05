@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyJetWallet.Sdk.Authorization.Http;
@@ -67,7 +70,10 @@ namespace MyJetWallet.Sdk.WalletApi
             services.AddControllers(options =>
             {
 
-            });//.AddNewtonsoftJson(); //todo: ask why we use NewtonsoftJson?
+            }).AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new MyDoubleConverter());
+            });
 
             services
                 .AddAuthentication(o => { o.DefaultScheme = "Bearer"; })
@@ -113,7 +119,7 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.BindServicesTree(Assembly.GetExecutingAssembly());
 
-            var sessionEncodingKey = Encoding.UTF8.GetBytes(GetSessionEncodingKey());
+            GetSessionEncodingKey();
 
             app.BindIsAlive(GetEnvVariables());
 
@@ -159,6 +165,4 @@ namespace MyJetWallet.Sdk.WalletApi
             };
         }
     }
-
-    
 }
