@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.8" />
     <PackageReference Include="MyJetWallet.Domain" Version="1.0.31" />
     <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="1.2.0" />
-    <PackageReference Include="NSwag.AspNetCore" Version="13.13.0" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.13.1" />
     <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="1.1.2" />
     <PackageReference Include="MyJetWallet.Sdk.RestApiTrace" Version="1.0.7" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
