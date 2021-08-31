@@ -55,6 +55,18 @@ namespace MyJetWallet.Sdk.WalletApi.Wallets
             return wallet;
         }
 
+        public async ValueTask<bool> SetBaseAssetAsync(JetClientIdentity clientId, string walletId, string baseAsset)
+        {
+            var response = await _clientWalletService.SetBaseAssetAsync(new SetBaseAssetRequest()
+            {
+                ClientId = clientId,
+                WalletId = walletId,
+                BaseAsset = baseAsset
+            });
+
+            return response.Success;
+        }
+
         public async ValueTask<JetWalletIdentity> GetWalletIdentityByIdAsync(JetClientIdentity clientId, string walletId)
         {
             var wallet = await GetWalletByIdAsync(clientId, walletId);
