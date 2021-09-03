@@ -22,6 +22,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CannotProcessQuoteRequest = 14,
         CannotExecuteQuoteRequest = 15,
         NoqEnoughLiquidityForConvert = 16,
-        LeadToNegativeSpread = 17
+        LeadToNegativeSpread = 17,
+        WithdrawalDoNotFound = 18
     }
 }
