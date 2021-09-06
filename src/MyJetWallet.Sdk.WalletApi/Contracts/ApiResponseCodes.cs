@@ -24,6 +24,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         NoqEnoughLiquidityForConvert = 16,
         LeadToNegativeSpread = 17,
         WithdrawalDoNotFound = 18,
-        AddressDoNotSupported = 19
+        AddressDoNotSupported = 19,
+        CannotResendWithdrawalVerification = 20
     }
 }
