@@ -25,6 +25,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         LeadToNegativeSpread = 17,
         WithdrawalDoNotFound = 18,
         AddressDoNotSupported = 19,
-        CannotResendWithdrawalVerification = 20
+        CannotResendWithdrawalVerification = 20,
+        PhoneIsNotConfirmed = 21
     }
 }
