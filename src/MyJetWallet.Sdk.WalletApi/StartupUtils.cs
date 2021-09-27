@@ -83,7 +83,8 @@ namespace MyJetWallet.Sdk.WalletApi
                 .AddAuthorization(o => o.SetupWalletApiPolicy());
         }
 
-        public static void SetupWalletApplication(IApplicationBuilder app, IWebHostEnvironment env, bool enableApiTrace, string swaggerOffsetName)
+        public static void SetupWalletApplication(IApplicationBuilder app, IWebHostEnvironment env, 
+            bool enableApiTrace, string swaggerOffsetName)
         {
             if (env.IsDevelopment())
             {
