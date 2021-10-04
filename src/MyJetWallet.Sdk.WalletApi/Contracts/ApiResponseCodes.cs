@@ -26,6 +26,17 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         WithdrawalDoNotFound = 18,
         AddressDoNotSupported = 19,
         CannotResendWithdrawalVerification = 20,
-        PhoneIsNotConfirmed = 21
+        PhoneIsNotConfirmed = 21,
+        
+        
+        //Auth
+        InvalidUserNameOrPassword = 101,
+        UserExists = 102,
+        UserNotExist = 103,
+        OldPasswordNotMatch = 104,
+        Expired = 105,
+        CountryIsRestricted = 106,
+        SocialNetworkNotSupported = 107,
+        SocialNetworkNotAvailable = 108
     }
 }
