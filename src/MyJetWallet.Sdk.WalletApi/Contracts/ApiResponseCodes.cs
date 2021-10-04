@@ -41,5 +41,6 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ValidationError = 109,
         BrandNotFound = 110,
         InvalidToken = 111,
+        RecaptchaFailed = 112
     }
 }
