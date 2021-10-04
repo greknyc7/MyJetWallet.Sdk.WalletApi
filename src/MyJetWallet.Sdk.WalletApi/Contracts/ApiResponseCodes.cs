@@ -37,6 +37,9 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         Expired = 105,
         CountryIsRestricted = 106,
         SocialNetworkNotSupported = 107,
-        SocialNetworkNotAvailable = 108
+        SocialNetworkNotAvailable = 108,
+        ValidationError = 109,
+        BrandNotFound = 110,
+        InvalidToken = 111,
     }
 }
