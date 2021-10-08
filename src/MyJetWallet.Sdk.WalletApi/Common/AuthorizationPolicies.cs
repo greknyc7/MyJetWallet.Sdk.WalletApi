@@ -6,10 +6,12 @@ namespace MyJetWallet.Sdk.WalletApi.Common
     {
         public const string VerifiedEmailPolicy = "VerifiedEmail";
         public const string Passed2FaPolicy = "Passed2Fa";
+        public const string PassedKYCPolicy = "PassedKYC";
         public static void SetupWalletApiPolicy(this AuthorizationOptions options)
         {
-            options.AddPolicy(AuthorizationPolicies.VerifiedEmailPolicy, policy => policy.RequireClaim("Email-Verified", "True"));
-            options.AddPolicy(AuthorizationPolicies.Passed2FaPolicy, policy => policy.RequireClaim("2FA-Passed", "True"));
+            options.AddPolicy(VerifiedEmailPolicy, policy => policy.RequireClaim("Email-Verified", "True"));
+            options.AddPolicy(Passed2FaPolicy, policy => policy.RequireClaim("2FA-Passed", "True"));
+            options.AddPolicy(PassedKYCPolicy,policy => policy.RequireClaim("KYCPassed", "True")); 
         }
     }
 }
