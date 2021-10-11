@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.ServiceModel.Dispatcher;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyJetWallet.Domain;
@@ -52,6 +54,34 @@ namespace MyJetWallet.Sdk.WalletApi
         {
             var id = new JetClientIdentity(controller.GetBrokerId(), controller.GetBrandId(), controller.GetClientId());
             return id;
+        }
+
+        private static readonly string[] IpHeaders = new string[4]
+        {
+            "CF-Connecting-IP",
+            "X-Forwarded-For",
+            "HTTP_X_FORWARDED_FOR",
+            "REMOTE_ADDR"
+        };
+        
+        public static string ClientIp(this ControllerBase controller)
+        {
+            var httpRequest = controller.HttpContext.Request;
+            
+            foreach (string ipHeader in IpHeaders)
+            {
+                if (httpRequest.Headers.ContainsKey(ipHeader))
+                {
+                    var value = httpRequest.Headers[ipHeader].ToString();
+                    if (!string.IsNullOrWhiteSpace(value))
+                    {
+                        var firstItem = value.Split(";").First().Split(",").First();
+                        return firstItem;
+                    }
+                }
+            }
+            
+            return httpRequest.HttpContext.Connection.RemoteIpAddress.ToString();
         }
 
     }
