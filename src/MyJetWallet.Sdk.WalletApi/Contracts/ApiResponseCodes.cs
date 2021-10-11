@@ -41,6 +41,23 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         ValidationError = 109,
         BrandNotFound = 110,
         InvalidToken = 111,
-        RecaptchaFailed = 112
+        RecaptchaFailed = 112,
+        
+        //Circle, Cards
+        InvalidKeyId = 201,
+        InvalidEncryptedData = 202,
+        InvalidBillingName = 203,
+        InvalidBillingCity = 204,
+        InvalidBillingCountry = 205,
+        InvalidBillingLine1 = 206,
+        InvalidBillingDistrict = 207,
+        InvalidBillingPostalCode = 208,
+        InvalidExpMonth = 209,
+        InvalidExpYear = 210,
+        CardAddressMismatch = 211,
+        CardZipMismatch = 212,
+        CardCvvInvalid = 213,
+        CardExpired = 214,
+        CardFailed = 215
     }
 }
