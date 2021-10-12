@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.ServiceModel.Dispatcher;
 using Microsoft.AspNetCore.Http;
@@ -82,6 +83,20 @@ namespace MyJetWallet.Sdk.WalletApi
             }
             
             return httpRequest.HttpContext.Connection.RemoteIpAddress.ToString();
+        }
+
+        public static RegionInfo ClientRegionInfo(this ControllerBase controller)
+        {
+            var ip = controller.ClientIp();
+            if (string.IsNullOrWhiteSpace(ip) ||
+                !controller.Request.Headers.TryGetValue("cf-ipcountry", out var cnCode))
+            {
+                return null;
+            }
+
+            var result = new RegionInfo(cnCode);
+
+            return result;
         }
 
     }
