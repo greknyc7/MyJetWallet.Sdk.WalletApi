@@ -76,7 +76,7 @@ namespace MyJetWallet.Sdk.WalletApi
                     var value = httpRequest.Headers[ipHeader].ToString();
                     if (!string.IsNullOrWhiteSpace(value))
                     {
-                        var firstItem = value.Split(";").First().Split(",").First();
+                        var firstItem = value.Split(";").First().Split(",").First().Trim();
                         return firstItem;
                     }
                 }
