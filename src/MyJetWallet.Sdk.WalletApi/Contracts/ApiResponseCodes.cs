@@ -59,6 +59,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardZipMismatch = 212,
         CardCvvInvalid = 213,
         CardExpired = 214,
-        CardFailed = 215
+        CardFailed = 215,
+        CardNotFound = 216,
+        PaymentFailed = 217
     }
 }
