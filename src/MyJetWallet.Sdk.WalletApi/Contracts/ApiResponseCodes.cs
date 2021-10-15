@@ -61,6 +61,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CardExpired = 214,
         CardFailed = 215,
         CardNotFound = 216,
-        PaymentFailed = 217
+        PaymentFailed = 217,
+        CardFirstAndLastNameCannotBeEmpty = 218,
+        InvalidGuid = 219
     }
 }
