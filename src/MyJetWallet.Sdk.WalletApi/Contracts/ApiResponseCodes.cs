@@ -28,7 +28,8 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         CannotResendWithdrawalVerification = 20,
         PhoneIsNotConfirmed = 21,
         NotSupported = 22,
-        
+        OperationNotFound = 23,
+        OperationNotAllowed = 24,
         
         //Auth
         InvalidUserNameOrPassword = 101,
