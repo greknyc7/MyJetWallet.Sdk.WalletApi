@@ -30,6 +30,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         NotSupported = 22,
         OperationNotFound = 23,
         OperationNotAllowed = 24,
+        BlockchainIsNotConfigured = 25,
         
         //Auth
         InvalidUserNameOrPassword = 101,
