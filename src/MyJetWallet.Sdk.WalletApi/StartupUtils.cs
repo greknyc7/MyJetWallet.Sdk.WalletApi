@@ -143,12 +143,12 @@ namespace MyJetWallet.Sdk.WalletApi
             
             app.UseSwagger(options =>
             {
-                options.RouteTemplate = $"swagger/{swaggerOffsetName}/{{swaggerOffsetName}}/swagger.json";
+                options.RouteTemplate = $"swagger/{swaggerOffsetName}/11/{{swaggerOffsetName}}/swagger.json";
             });
             
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint($"/swagger/{swaggerOffsetName}/v1/swagger.json", $"Wallet API: {swaggerOffsetName}");
+                c.SwaggerEndpoint($"/swagger/{swaggerOffsetName}/11/v1/swagger.json", $"Wallet API: {swaggerOffsetName}");
                 c.RoutePrefix = $"swagger/{swaggerOffsetName}";
             });
             
