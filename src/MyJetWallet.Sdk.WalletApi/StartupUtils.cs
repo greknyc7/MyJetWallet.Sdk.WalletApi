@@ -47,6 +47,7 @@ namespace MyJetWallet.Sdk.WalletApi
             });
             */
             
+            /*
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -62,7 +63,7 @@ namespace MyJetWallet.Sdk.WalletApi
                 });
             });
             services.AddSwaggerGenNewtonsoftSupport();
-            
+            */
         }
 
         /// <summary>
@@ -139,6 +140,7 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.BindIsAlive(GetEnvVariables());
 
+            /*
             app.UseSwagger(options =>
             {
                 options.RouteTemplate = $"/swagger/{swaggerOffsetName}/{{swaggerOffsetName}}/swagger.json";
@@ -148,6 +150,7 @@ namespace MyJetWallet.Sdk.WalletApi
             {
                 c.SwaggerEndpoint($"/swagger/{swaggerOffsetName}/v1/swagger.json", $"Wallet API: {swaggerOffsetName}");
             });
+            */
             
             /*
             app.UseOpenApi(settings =>
