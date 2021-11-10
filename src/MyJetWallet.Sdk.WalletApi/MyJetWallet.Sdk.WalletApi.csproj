@@ -1,20 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <PackageProjectUrl>https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MyJetWallet/MyJetWallet.Sdk.WalletApi</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.10" />
-    <PackageReference Include="MyJetWallet.Domain" Version="1.0.31" />
-    <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="1.2.6" />
-    <PackageReference Include="NSwag.AspNetCore" Version="13.13.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="MyJetWallet.Domain" Version="1.0.32" />
+    <PackageReference Include="MyJetWallet.Service.ClientWallets.Client" Version="1.2.9" />
     <PackageReference Include="MyJetWallet.Sdk.Authorization" Version="2.0.11" />
     <PackageReference Include="MyJetWallet.Sdk.RestApiTrace" Version="1.0.9" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
     <PackageReference Include="SimpleTrading.ServiceStatusReporterConnector" Version="1.0.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.2.3" />
   </ItemGroup>
 
 </Project>

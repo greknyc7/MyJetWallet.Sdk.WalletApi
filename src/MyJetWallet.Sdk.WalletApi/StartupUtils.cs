@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyJetWallet.Sdk.Authorization.Http;
@@ -16,11 +12,11 @@ using MyJetWallet.Sdk.RestApiTrace;
 using MyJetWallet.Sdk.Service;
 using MyJetWallet.Sdk.WalletApi.Common;
 using MyJetWallet.Sdk.WalletApi.Middleware;
-using NSwag;
 using Prometheus;
 using SimpleTrading.BaseMetrics;
 using SimpleTrading.ServiceStatusReporterConnector;
 using SimpleTrading.TokensManager;
+using Microsoft.OpenApi.Models;
 
 namespace MyJetWallet.Sdk.WalletApi
 {
@@ -34,6 +30,7 @@ namespace MyJetWallet.Sdk.WalletApi
         /// <param name="services"></param>
         public static void SetupSwaggerDocumentation(this IServiceCollection services)
         {
+            /*
             services.AddSwaggerDocument(o =>
             {
                 o.Title = "MyJetWallet API";
@@ -48,6 +45,24 @@ namespace MyJetWallet.Sdk.WalletApi
                         Name = "Authorization"
                     });
             });
+            */
+            
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "MyJetWallet API", 
+                    Version = "v1"
+                });
+                
+                c.AddSecurityDefinition("auth", new OpenApiSecurityScheme()
+                {
+                    Type = SecuritySchemeType.ApiKey,
+                    BearerFormat = "Bearer <api key>"
+                });
+            });
+            services.AddSwaggerGenNewtonsoftSupport();
+            
         }
 
         /// <summary>
@@ -124,6 +139,17 @@ namespace MyJetWallet.Sdk.WalletApi
 
             app.BindIsAlive(GetEnvVariables());
 
+            app.UseSwagger(options =>
+            {
+                options.RouteTemplate = $"/swagger/{swaggerOffsetName}/{{swaggerOffsetName}}/swagger.json";
+            });
+            
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint($"/swagger/{swaggerOffsetName}/v1/swagger.json", $"Wallet API: {swaggerOffsetName}");
+            });
+            
+            /*
             app.UseOpenApi(settings =>
             {
                 settings.Path = $"/swagger/{swaggerOffsetName}/swagger.json";
@@ -136,6 +162,7 @@ namespace MyJetWallet.Sdk.WalletApi
                 settings.DocumentPath = $"/swagger/{swaggerOffsetName}/swagger.json";
 
             });
+            */
             
 
             app.UseMiddleware<ExceptionLogMiddleware>();
