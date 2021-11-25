@@ -18,7 +18,7 @@ namespace MyJetWallet.Sdk.WalletApi.Contracts
         KycNotPassed = 10,              // Your account is not verified. Complete KYC verification now
         AssetDoNotSupported = 11,       // Asset is not supported / Trading is not available for this asset now. Please try again later.
         NotEnoughLiquidityForMarketOrder = 12,   // 
-        InvalidOrderValue = 13,                  // 
+        InvalidOrderValue = 13,                  // 12
         CannotProcessQuoteRequest = 14,          // 
         CannotExecuteQuoteRequest = 15,          // 
         NoqEnoughLiquidityForConvert = 16,       // 
